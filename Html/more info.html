@@ -1,0 +1,61 @@
+<html>
+<head>
+<title></title>
+ <script type='text/javascript'>
+var isCtrl = false;
+document.onkeyup=function(e)
+{
+if(e.which == 17)
+isCtrl=false;
+}
+document.onkeydown=function(e)
+{
+if(e.which == 123)
+isCtrl=true;
+if (((e.which == 85) || (e.which == 65) || (e.which == 88) || (e.which == 67) || (e.which == 86) || (e.which == 2) || (e.which == 3) || (e.which == 123) || (e.which == 83)) && isCtrl == true)
+{
+alert('This is Function Disabled');
+return false;
+}
+}
+// right click code
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+    alert('This is Function Disabled');
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
+//select content code disable  alok goyal
+function killCopy(e){
+return false
+}
+function reEnable(){
+return true
+}
+document.onselectstart=new Function ("return false")
+if (window.sidebar){
+document.onmousedown=killCopy
+document.onclick=reEnable
+}
+</script>
+ <link rel="icon" href="favicon-16x16.png" type="image/icon">
+<style>
+#p1{
+	font-size:20px;
+	font-weight:bolder;
+}
+</style>
+<body style="background: url(https://wallpapercave.com/wp/wp3474778.jpg); background-size: 100% 100%;"  text="black">
+<font size="6"><center><h1>MORE INFO:</h1><font>
+<font size="5"><p id="p1">When you click on the button for copying ignore the area with text<p></font>
+<a href="index.html">
+<button>BACK</button>
+</a>
